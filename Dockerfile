@@ -26,7 +26,7 @@ WORKDIR /app/WebLCT
 RUN set -ex && \
     apk --update add openjdk8-jre fontconfig \
     && curl -fL ftp://jupiter.spiderx.dp.ua/docker/imanager-u2000-web-lct/${LCT_NAME} -o /tmp/
-    unzip /tmp/${LCT_NAME} -d .. && \
+    && unzip /tmp/${LCT_NAME} -d .. && \
     touch web_app/conf/log4j.properties && \
     sed -i 's/l>0/l>1/' weblct/plugins/com.huawei.weblct.rwcfgfile/common/conf/system.xml && \
     rm -rf /var/cache/apk/* /tmp/${LCT_NAME} && \
