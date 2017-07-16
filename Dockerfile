@@ -16,7 +16,8 @@ ENV JAVA_ALPINE_VERSION 8.121.13-r0
 # Disable fontconfig warning (https://github.com/docker-library/openjdk/issues/73)
 ENV FC_LANG en-US
 
-COPY ${LCT_DIST} /tmp/
+#COPY ${LCT_DIST} /tmp/
+ADD ftp://jupiter.spiderx.dp.ua/docker/imanager-u2000-web-lct/U2000WebLCTV100R009C00SPC302_en_win32_x86.zip /tmp/
 
 WORKDIR /app/WebLCT
 
