@@ -24,7 +24,7 @@ WORKDIR /app/WebLCT
 # Create properties for log4j, use fonts from WebLCT dist,
 # disable connections only from localhost
 RUN set -ex && \
-    apk --update add openjdk8-jre fontconfig \
+    apk --update add curl fontconfig openjdk8-jre  \
     && curl -fL ftp://jupiter.spiderx.dp.ua/docker/imanager-u2000-web-lct/${LCT_NAME} -o /tmp/ \
     && unzip /tmp/${LCT_NAME} -d .. && \
     touch web_app/conf/log4j.properties && \
